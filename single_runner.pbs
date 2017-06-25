@@ -2,7 +2,7 @@
 #PBS -N BallisticSearch
 #PBS -m a
 #PBS -m b
-#PBS -o $HOME/scratch/Dev_Compression/Evo_phototaxis_$ARG_SEED.log
+#PBS -o $HOME/scratch/Ballistic_Search/pbs_$ARG_SEED.log
 #PBS -M skriegma@uvm.edu
 #PBS -l nodes=1:ppn=1,pmem=2gb,pvmem=2gb
 #PBS -l walltime=03:00:00
