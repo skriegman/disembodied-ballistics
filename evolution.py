@@ -14,6 +14,7 @@ SEED = int(sys.argv[1])
 
 RUNS = 30
 MUT_RATE = 24/48.
+MUT_SCALE = 1
 
 GENS = 2000
 POP_SIZE = 30
@@ -36,7 +37,7 @@ for DEVO in [False, True]:
         NEEDLE = needle_in_a_haystack(LENGTH, INTERVAL)
         FIT_FUNC = partial(time_on_needle, needle=NEEDLE, devo=DEVO, time_step=TIME_STEP)
 
-        pop = Population(POP_SIZE, LENGTH, FIT_FUNC, MUT_RATE)
+        pop = Population(POP_SIZE, LENGTH, FIT_FUNC, MUT_RATE, MUT_SCALE)
 
         for gen in range(GENS):
             pop.create_children_through_mutation()

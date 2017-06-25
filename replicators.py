@@ -84,12 +84,13 @@ class Individual(object):
 
 
 class Population(object):
-    def __init__(self, size, ind_length, fitness_func, mut_rate=None, protect_age=True):
+    def __init__(self, size, ind_length, fitness_func, mut_rate=None, mut_scale=None, protect_age=True):
         self.size = size
         self.ind_length = ind_length
         self.fitness_func = fitness_func
         self.protect_age = protect_age
         self.mut_rate = mut_rate
+        self.mut_scale = mut_scale
         self.gen = 0
         self.individuals_dict = {}
         self.max_id = 0
@@ -114,7 +115,7 @@ class Population(object):
     def create_children_through_mutation(self):
         for key, parent in self.individuals_dict.items():
             child = deepcopy(parent)
-            child.mutate(self.max_id, self.mut_rate)
+            child.mutate(self.max_id, self.mut_rate, self.mut_scale)
             child.already_evaluated = False
             self.individuals_dict[self.max_id] = child
             self.max_id += 1
