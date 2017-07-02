@@ -9,20 +9,20 @@ from replicators import Population
 # np.random.seed(SEED)
 # DEVO = True
 # INTERVAL = 0.5  # how close you have to be to the needle
+# RUNS = 30
 
 SEED = int(sys.argv[1])
 
-RUNS = 30
 MUT_RATE = 24/48.
 MUT_SCALE = 1
 
-GENS = 2000
+GENS = 8000
 POP_SIZE = 30
 NUM_RAND_INDS = 1
 PROTECT_AGE = True
 PAIRWISE = False
-TIME_STEP = 1/40.
-LENGTH = 4*4*3
+TIME_STEP = 1/1000.
+LENGTH = 24
 
 data = []
 for DEVO in [False, True]:
